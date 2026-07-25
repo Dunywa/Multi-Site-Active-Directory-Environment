@@ -36,12 +36,6 @@ This project demonstrates proficiency across Microsoft infrastructure, routing, 
 
 <img width="1306" height="1204" alt="Multisite AD Environment" src="https://github.com/user-attachments/assets/cb2bac5b-275a-4318-9e01-587ae3618c1e" />
 
-
-
-
-
-
-
 ---
 
 ## 🌐 Network Topology Diagram
@@ -50,56 +44,106 @@ This project demonstrates proficiency across Microsoft infrastructure, routing, 
 | Headquarters (HQ)    | MVHOIT-DC1          | 10.0.1.0/24      | 10.0.100.1     | 10.0.100.254    | Main DC Site  |
 |Branch Office (BO)    | MVBOIT-DC1          | 192.168.100.0/24 | 192.168.100.1  | 192.168.100.254 | Remote DC Site| 
 
-Each subnet is connected via a site-to-site link (VPN or static route between routers).
-So DC1 and DC2 can ping each other across subnets.
+---
 
-Each RRAS server acts as:
+# Technologies Implemented
 
-- WAN router/gateway
+## Networking
 
-- Firewall
+- Hyper-V Virtual Networking
+- RRAS Routing
+- NAT Configuration
+- TCP/IP Subnetting
+- Network Segmentation
 
-- VPN tunnel endpoint
+## Active Directory
 
-- Inter-subnet router
+- Active Directory Domain Services
+- Multi-site Domain Controllers
+- DNS Integration
+- Global Catalog
+- AD Replication
+- AD Sites and Services
+
+## DHCP
+
+- DHCP Server Deployment
+- DHCP Scopes
+- DHCP Failover
+- High Availability Configuration
 
 ---
 
-## ⚙️ Requirements / Environment
-| Component | Description |
-|------------|--------------|
-| **DC Servers** | Windows Server 2022 and Windows Server 2025 |
-| **Clients** | Windows 10 Pro (2x) |
-| **Firewalls / Routers** | Windows Server 2019 and 2022 |
-| **Hypervisor** | Hyper-V |
-| **Other Tools** | PowerShell, Server Manager, Event Viewer |
+# Infrastructure Details
+
+## Domain
+mvulasmsp.local
+
+
+## Domain Controllers
+
+| Server | Location | IP Address |
+|---|---|---|
+| MVHOIT-DC1 | Head Office | 10.0.100.1 |
+| MVBOIT-DC1 | Branch Office | 192.168.100.1 |
 
 ---
 
-## 🧩 Design Plan / Steps Overview
+# Project Phases
 
-- Configured site-to-site VPN (IPSec Tunnel) to connect the two sites  
-- Promote two Windows Servers as Domain Controllers  
-- Configure DHCP scopes per subnet  
-- Configure DNS replication  
-- Test site-to-site communication and failover
+## Phase 1 - Azure/Hyper-V Infrastructure
+
+- Created virtual networking environment
+- Deployed Windows Server infrastructure
+
+## Phase 2 - Routing and NAT
+
+- Configured RRAS
+- Enabled NAT
+- Connected isolated office networks
+
+## Phase 3 - Active Directory Deployment
+
+- Created Active Directory forest
+- Deployed two domain controllers
+- Configured DNS and replication
+
+## Phase 4 - DHCP High Availability
+
+- Configured DHCP scopes
+- Implemented DHCP failover
+- Tested redundancy
 
 ---
 
-## 🛠️ Implementation (Execution)
-Document how you **implemented** each major step.  
-Focus on **what was done**, key **PowerShell commands**, and **screenshots** — not click-by-click instructions.
+# Skills Demonstrated
 
-**Example Format:**
-### Step 1: Configure PFsense VPN
-- Created IPSec VPN tunnel between sites.  
-- Allowed required AD and DNS ports.  
-- Verified connectivity with ICMP.
+✅ Active Directory Administration  
+✅ DNS Troubleshooting  
+✅ DHCP Configuration  
+✅ Windows Server Management  
+✅ Network Routing  
+✅ Hyper-V Virtualization  
+✅ Enterprise Troubleshooting  
+✅ MSP Infrastructure Support  
 
-**Example Screenshot:**
-`![PFsense VPN Config](./pfsense-vpn.png)`
+---
 
-**Example Command:**
-```powershell
-Test-Connection -ComputerName DC2 -Count 4
+# Planned additions:
+
+- Group Policy Management
+- File Server Deployment
+- DFS Replication
+- Print Server
+- Microsoft Intune Integration
+- Azure AD Connect
+- Backup and Monitoring Solutions
+
+---
+
+## Author
+
+**Mvula Dunywa**
+
+L2 IT Support Technician Portfolio Project
 
