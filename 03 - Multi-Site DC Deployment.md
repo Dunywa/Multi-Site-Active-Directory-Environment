@@ -168,10 +168,10 @@ DNS was deployed on both domain controllers to provide internal name resolution.
 
 | Server | DNS Role |
 | --- | --- |
-| MVHOIT-DC1 | Primary DNS Z|
-| BR-DC01 | Active Directory Intergrated |
+| MVHOIT-DC1 | Primary DNS|
+| MVBOIT-DC1 | Primary DNS |
 
-Both DNS zones are configured as Active Directory Integrated zones. Which makes both the primary zones
+Both DNS zones are configured as Active Directory Integrated zones. Which makes both the primary zones.
 
 ---
 
@@ -258,6 +258,10 @@ Validated:
 
 Validated:
 
+
+<img width="689" height="444" alt="Screenshot 2026-07-26 003735" src="https://github.com/user-attachments/assets/4e128dcb-a232-4b43-8b6a-7a5543301e91" />
+
+
 - User login functionality
 - Domain join capability
 - Active Directory connectivity
@@ -311,7 +315,25 @@ Validated:
 ---
 
 
+# Outcome
 
+Successfully deployed a multi-site Active Directory environment with redundant domain controllers.
+
+The environment now provides:
+
+- Centralized authentication
+- DNS redundancy
+- Active Directory replication
+- Branch office domain services
+- Enterprise identity management foundation
+
+This infrastructure is ready for the next phases:
+
+- DHCP High Availability
+- Group Policy Deployment
+- File Services
+- DFS Replication
+- Microsoft 365 Integration
 
 
 
