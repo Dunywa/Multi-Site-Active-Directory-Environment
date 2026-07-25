@@ -1,0 +1,25 @@
+# Phase 3 - Multi-Site Active Directory Deployment
+
+Deployed a multi-site Active Directory environment with two domain controllers supporting Head Office and Branch Office locations.
+
+## Overview
+
+The purpose of this phase was to deploy centralized identity management, authentication, and DNS services across multiple locations.
+
+The environment simulates a real-world enterprise infrastructure where branch offices maintain local domain controllers while synchronizing Active Directory data with the Head Office.
+
+---
+
+## Objectives
+
+- Deploy Active Directory Domain Services (AD DS)
+- Deploy two domain controllers
+- Create an Active Directory forest
+- Configure DNS services
+- Configure Global Catalog services
+- Establish Active Directory replication between sites
+- Prepare the environment for enterprise services
+
+---
+
+# Active Directory Architecture
