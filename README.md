@@ -1,33 +1,54 @@
-# Active Directory + DHCP + DNS Redundant Setup in Multi-Site Environment
+# Multi-Site Active Directory Deployment
+
+![Azure](https://img.shields.io/badge/Azure-Virtual%20Network-0078D4?logo=microsoftazure)
+![Windows Server](https://img.shields.io/badge/Windows%20Server-2022-0078D6?logo=windowsserver)
+![Active Directory](https://img.shields.io/badge/Active%20Directory-DS-00A300)
+![DNS](https://img.shields.io/badge/DNS-Server-0066CC)
+![DHCP](https://img.shields.io/badge/DHCP-Server-FF8C00)
+![Hyper-V](https://img.shields.io/badge/Hyper--V-Hypervisor-7030A0)
+![RRAS](https://img.shields.io/badge/RRAS-Routing%20%26%20NAT-red)
+![Networking](https://img.shields.io/badge/Networking-TCP%2FIP-orange)
+
+## Project Overview
+
+This project simulates a real-world enterprise environment consisting of a **Head Office and Branch Office connected through routed networking**.
+
+The objective was to design, deploy, and troubleshoot a multi-site Active Directory infrastructure similar to what an MSP Level 2 Technician would support.
+
+The environment includes:
+
+- Multi-site Active Directory Domain Services
+- DNS infrastructure
+- DHCP High Availability
+- Hyper-V virtualization
+- Windows Server routing and NAT
+- AD replication between locations
+- Enterprise network segmentation
+- Client workstation management
+- Real-world troubleshooting scenarios
 
 ---
 
-## 🧭 Objective / Scenario
-This project simulates a multi-site corporate network where two branch offices are connected using Windows Server Routing & Remote Access Service (RRAS) to establish a secure site-to-site VPN. Each site hosts a Windows Server 2022 Domain Controller providing AD, DNS, and DHCP with failover
+# Architecture Overview
 
-The objective is to showcase real MSP-style infrastructure skills using Windows Server only, including:
-
-- RRAS routing & IPSec VPN
-
-- Multi-site Active Directory
-
-- DHCP Failover
-
-- DNS integration
-
-- AD Sites & Services replication
-
-- Multi-subnet domain join & routing
 
 This project demonstrates proficiency across Microsoft infrastructure, routing, VPN, and enterprise network design.
+
+<img width="1306" height="1204" alt="Multisite AD Environment" src="https://github.com/user-attachments/assets/cb2bac5b-275a-4318-9e01-587ae3618c1e" />
+
+
+
+
+
+
 
 ---
 
 ## 🌐 Network Topology Diagram
-|  Site                |  Domain Controller  |  LAN Subnet          | DC Server IP   | Router IP     | WAN IP        | Description   | 
-|----------------------|---------------------|------------------|----------------|---------------|---------------|---------------|
-| Headquarters (HQ)    | MVHO-DC1            | 192.168.1.0/24   | 192.168.1.1    | 192.168.1.1   | 10.0.0.1      | Main DC Site  |
-|Branch Office (BO)    | MVBO-DC2            | 192.168.2.0/24   | 192.168.2.2    | 192.168.2.1   | 10.0.0.2      | Remote DC Site| 
+|  Site                |  Domain Controller  |  LAN Subnet      | DC Server IP   | Router IP       | Description   | 
+|----------------------|---------------------|------------------|----------------|---------------  |---------------|
+| Headquarters (HQ)    | MVHOIT-DC1          | 10.0.1.0/24      | 10.0.100.1     | 10.0.100.254    | Main DC Site  |
+|Branch Office (BO)    | MVBOIT-DC1          | 192.168.100.0/24 | 192.168.100.1  | 192.168.100.254 | Remote DC Site| 
 
 Each subnet is connected via a site-to-site link (VPN or static route between routers).
 So DC1 and DC2 can ping each other across subnets.
