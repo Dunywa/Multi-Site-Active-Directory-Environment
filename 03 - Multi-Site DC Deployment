@@ -23,3 +23,37 @@ The environment simulates a real-world enterprise infrastructure where branch of
 ---
 
 # Active Directory Architecture
+
+
+---
+
+# Domain Configuration
+
+## Forest Name
+
+- mvulamsp.local
+
+
+---
+
+## Domain Controllers
+
+| Server | Location | IP Address | Roles |
+| --- | --- | --- | --- |
+| HQ-DC01 | Head Office | 10.0.100.10 | AD DS, DNS, Global Catalog |
+| BR-DC01 | Branch Office | 192.168.100.10 | AD DS, DNS, Global Catalog |
+
+---
+
+# Head Office Domain Controller
+
+## Server Information
+
+- Server Name: MVHOIT-DC1
+
+- Location: Head Office
+
+- Operating System: Windows Server 2022
+
+
+
