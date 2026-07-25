@@ -53,7 +53,7 @@ The environment simulates a real-world enterprise infrastructure where branch of
 
 - Location: Head Office
 
-- Operating System: Windows Server 2022
+- Operating System: Windows Server 2022sd
 
 
 
