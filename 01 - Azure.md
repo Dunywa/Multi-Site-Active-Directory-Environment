@@ -1,100 +1,91 @@
-# Phase 1 - Azure Infrastructure
-
-Created Resource Groups, Virtual Networks, and Azure virtual machines.
+# Phase 1 – Azure Environment Setup
 
 ## Overview
 
-The Azure environment provides the foundational infrastructure required to host the VMware lab.
+The objective of this phase was to build the cloud infrastructure that hosts the entire lab environment. Rather than deploying multiple Azure virtual machines, a single Microsoft Azure Windows Server 2022 virtual machine was provisioned and configured as the Hyper-V host. All subsequent infrastructure components, including Domain Controllers and client machines, are deployed as nested Hyper-V virtual machines within this host.
+
+This approach reduces Azure costs while providing a flexible environment for simulating an enterprise Active Directory infrastructure.
+
+---
 
 ## Objectives
 
-- Create a dedicated Resource Group
-- Create a Virtual Network
-- Configure subnet segmentation
-- Deploy management servers
+- Create an Azure Resource Group
+- Deploy a Windows Server 2022 Azure Virtual Machine
+- Configure the VM as a Hyper-V host
+- Prepare the environment for nested virtualization
+- Provide a foundation for the remaining project phases
 
-## Components Deployed
+---
 
-### Resource Group
+## Environment
 
-RG-VMWARE-LAB
+| Component | Configuration |
+|----------|---------------|
+| Cloud Platform | Microsoft Azure |
+| Resource Group | MULTI-SITE-RG1 |
+| Operating System | Windows Server 2022 Datacenter |
+| Hypervisor | Hyper-V |
+| Host Name | MVITHOST1 |
 
-<img width="955" height="567" alt="RG-VMWARE-LAB" src="https://github.com/user-attachments/assets/00bb157e-ac0d-4df8-a9db-0a312b2af580" />
+---
 
-### Virtual Network
-
-VNET-VMWARE-LAB
-
-<img width="951" height="601" alt="VNET-VMWARE-LAB" src="https://github.com/user-attachments/assets/78e94649-3ab0-4014-a771-674a4c73578e" />
-
-
-#### Address Space
+## Architecture
 
 ```
-10.0.0.0/16
+Microsoft Azure
+│
+├── Resource Group
+│
+└── Azure VM (MVITHOST1)
+      │
+      └── Hyper-V
+            ├── HQ Domain Controller
+            ├── Branch Domain Controller
+            ├── Windows Client
+            └── Additional Lab Servers
 ```
 
 ---
 
-### Subnets
+## Tasks Completed
 
-<img width="954" height="496" alt="Subnets" src="https://github.com/user-attachments/assets/979edbb1-1608-48d8-ab43-320e58f39cec" />
-
-***Management Subnet***
-
-```
-10.0.1.0/24
-```
-
-Purpose:
-
-- DC01
-
-- Jump01
+- Created an Azure Resource Group
+- Deployed a Windows Server 2022 virtual machine
+- Enabled nested virtualization
+- Installed and configured the Hyper-V role
+- Verified Hyper-V functionality
+- Prepared the host for deploying virtual machines
 
 ---
 
-***Server Subnet***
+## Skills Demonstrated
 
-```
-10.0.2.0/24
-```
-
-Purpose:
-
-- Storage01
-- Workload Servers
+- Microsoft Azure
+- Azure Virtual Machines
+- Windows Server 2022
+- Hyper-V
+- Nested Virtualization
+- Infrastructure Planning
 
 ---
 
-***VMware Subnet***
+## Screenshots
 
-```
-10.0.3.0/24
-```
+### Azure Resource Group
 
-Purpose:
+> *(Insert screenshot here)*
 
-- ESXI01
-- ESXI02
-- vCenter01
+### Azure Virtual Machine
 
-- 
-###  Azure Virtual Machines
-Deployed JumpBox01 PC in Management Subnet
+> *(Insert screenshot here)*
 
-Purpose:
-- To manage the environment
+### Hyper-V Installed
 
-<img width="1236" height="680" alt="JumpBox01" src="https://github.com/user-attachments/assets/66aa371c-1e1a-4e63-b9fd-886b7f6d0ccb" />
+> *(Insert screenshot here)*
 
-Deployed DC01 Server in the Management Subnets
-
-Purpose:
-- To install Active Directory to centrally manage workloads
-
-<img width="1366" height="496" alt="DC01" src="https://github.com/user-attachments/assets/bd964cf3-d8e2-4c04-bfa6-5d2c4e9b3db8" />
+---
 
 ## Outcome
 
-Successfully deployed the Azure infrastructure required to support the VMware environment and future workload expansion.
+A dedicated Azure-hosted Hyper-V environment was successfully deployed and prepared to host all virtual machines required for the multi-site Active Directory lab. This infrastructure serves as the foundation for the remaining phases of the project.
