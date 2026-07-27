@@ -74,15 +74,13 @@ Microsoft Azure
 
 ### Azure Resource Group
 
-> *(Insert screenshot here)*
+<img width="1673" height="733" alt="Resource Group" src="https://github.com/user-attachments/assets/35d9db8e-347e-49d0-a68f-a78d3452d2e4" />
+
 
 ### Azure Virtual Machine
 
-> *(Insert screenshot here)*
+<img width="1636" height="799" alt="Azure VM" src="https://github.com/user-attachments/assets/ce75915e-2630-4f78-b56e-c4c276d8da24" />
 
-### Hyper-V Installed
-
-> *(Insert screenshot here)*
 
 ---
 
