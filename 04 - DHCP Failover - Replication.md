@@ -1,4 +1,4 @@
-# Phase X – DHCP Failover (Replication)
+# Phase 4 – DHCP Failover (Replication)
 
 ## Overview
 
@@ -218,7 +218,14 @@ Checked:
 
 ## DHCP Role Installation
 
-`/screenshots/dhcp/dhcp-role-installed.png`
+<img width="780" height="556" alt="1  DHCP Feature Install - MVHOIT-DC1" src="https://github.com/user-attachments/assets/aba35ed8-cdf8-448c-a8b5-c5c6d5e8219c" />
+
+<img width="784" height="554" alt="3  DHCP Feature Install - MVBOIT-DC1" src="https://github.com/user-attachments/assets/d7932dea-cb71-4309-9c6e-522f29dac08e" />
+
+<img width="755" height="554" alt="2  Authorizing DHCP Server - MVHOIT-DC1" src="https://github.com/user-attachments/assets/27a0a305-6ab0-4e3d-beec-ebf09d869928" />
+
+<img width="754" height="554" alt="4  Authorizing DHCP Server - MVBOIT-DC1" src="https://github.com/user-attachments/assets/a46d7006-b87d-415f-94e1-67602b1eb2b8" />
+
 
 ---
 
